@@ -1,10 +1,7 @@
 from bs4 import BeautifulSoup
+import requests
 
-with open('home.html','r') as html_file:
-    content = html_file.read()
-    soup = BeautifulSoup(content, 'lxml')
-    course_cards = soup.find_all('div', class_='card')
-    for course in course_cards:
-        course_name = course.h5.text
-        course_prince = course.a.text.split()[-1]
-        print(f'{course_name} costs:{course_prince}')
+
+html_text = requests.get('https://www.timesjobs.com/candidate/job-search.html?searchType=personalizedSearch&from=submit&txtKeywords=python&txtLocation=').text
+
+print(html_text)
