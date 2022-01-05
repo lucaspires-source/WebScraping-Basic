@@ -1,1 +1,1 @@
-# WebScraping-Basic
+# Basic Python Web Scraping with Beautiful Soup 
